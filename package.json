@@ -1,0 +1,31 @@
+{
+  "name": "sockets-client-to-cloud-led-example",
+  "description": "client side (raspberrypi) nodejs server running socketsio-client",
+  "main": "server.js",
+  "scripts": {
+    "start": "node client.js 8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learninghabits/sockets-client-to-cloud-led-example.git"
+  },
+  "keywords": [
+    "nodejs",
+    "socketsio",
+    "raspberrypi",
+    "LED",
+    "breadboard"
+  ],
+  "author": "Tshepo Ntlhokoa (tshepo.ntlhokoa@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/learninghabits/sockets-client-to-cloud-led-example/issues"
+  },
+  "homepage": "https://github.com/learninghabits/sockets-client-to-cloud-led-example#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "onoff": "^1.1.7",
+    "socket.io-client": "^2.0.3"
+  },
+  "devDependencies": {}
+}
