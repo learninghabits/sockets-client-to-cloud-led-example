@@ -1,6 +1,6 @@
 module.exports = {
     startSockets: function () {
-        var socketsUrl = 'http://localhost:8080';
+        var socketsUrl = 'http://www.learninghabits.co.za';
         var socket = require('socket.io-client')(socketsUrl);
         socket.on('SwitchOn', function (data) {
             var led = require('./led');
