@@ -15,7 +15,7 @@ module.exports = {
         socket.on('ToggleState', function (data) {
             var led = require('./led');
             led.blink(data);
-            console.log('sockets toggle state message received');
+            console.log('sockets toggle state message received' + data.seconds);
         });
         socket.on('disconnect', function () {
             console.log('client disconnected with ID : ' + socket.id);

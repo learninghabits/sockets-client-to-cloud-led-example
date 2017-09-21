@@ -6,15 +6,14 @@ function LED() {
 
   return {
     blink: function (data) {
-      var milliseconds = data.seconds;
-      interval = setInterval(function () {
-        setInterval(function () {
+      var milliseconds = (data.seconds || 2) * 1000;
+      console.log("data.seconds: " + data.seconds);
+      interval = setInterval(function () {       
           var value = (led.readSync() + 1) % 2;
           led.write(value, function () {
             console.log("Changed LED state to: " + value);
-          });
-        }, milliseconds);
-      })
+          });       
+      }, milliseconds)
     },
     switchOn: function () {
       if (interval) {

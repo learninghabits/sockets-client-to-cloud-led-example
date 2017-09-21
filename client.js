@@ -18,18 +18,14 @@ app.get('/led/off', function (request, response) {
 });
 
 app.get('/led/blink/:seconds', function (request, response) {
-    var seconds = request.query.Seconds || request.query.seconds;
+    var seconds = (request.query.Seconds || request.query.seconds) || (request.params.Seconds || request.params.seconds);
     led.blink({ seconds: seconds });
     response.status(200)
         .send('OK');
 });
 
 app.get('*', function (req, res) {
-    res.send(
-        `This sockets client is ready for get requests:
-			/led/on
-			/led/off
-			/led/blink/:seconds`);
+    res.send("This sockets client is ready for get comms");
 });
 
 var port = process.argv.slice(2)[0] || (process.env.PORT || 80);
