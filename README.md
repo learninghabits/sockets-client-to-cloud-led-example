@@ -1,5 +1,9 @@
 # sockets-to-raspberry-node-client
 
+### 0. Installing NodeJS on your Pi
+
+* https://webofthings.org/2016/10/23/node-gpio-and-the-raspberry-pi/
+
 ### 1. Installing GIT on your machine (Linux)
 
 * sudo apt-get update
