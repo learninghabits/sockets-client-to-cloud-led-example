@@ -17,6 +17,10 @@
 
 * EINVAL: invalid argument, write (you are not running the code on a Pi)
 
+### 4. Raspberry onoff module
+
+* https://www.npmjs.com/package/onoff
+
 ### 4. Getting Server started on boot
 
 * https://www.raspberrypi.org/forums/viewtopic.php?p=921354

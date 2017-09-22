@@ -20,8 +20,8 @@ module.exports = {
         socket.on('disconnect', function () {
             console.log('client disconnected with ID : ' + socket.id);
         });
-	socket.on('connect', function(){
-		if (cb) cb();
-	});
+        socket.on('connect', function () {
+            if (cb) cb();
+        });
     }
 };
