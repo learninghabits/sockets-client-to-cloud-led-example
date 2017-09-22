@@ -2,11 +2,8 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var sr = require('./socketsreceiver');
+sr.startSockets();
 var led = require('./led');
-
-sr.startSockets(function() {
-    led.deviceOn();
-});
 
 app.get('/led/on', function (request, response) {
     led.switchOn();
@@ -32,14 +29,14 @@ app.get('*', function (req, res) {
 });
 
 var port = process.argv.slice(2)[0] || (process.env.PORT || 80);
-
 http.listen(port, function () {
     console.log("SERVER IS LISTENING ON PORT: " + port);
     console.log("CTRL+C TO STOP ");
 });
 
 process.on('SIGINT', function () {
-    led.exit();
+    led.writeSync(0);
+    led.unexport();
     console.log('BYE BYE, STOPPED GRACIOUSLY!');
     process.exit();
 });

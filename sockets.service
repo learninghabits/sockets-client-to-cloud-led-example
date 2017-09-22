@@ -1,0 +1,12 @@
+[Service]
+WorkingDirectory=/home/pi/lbsockets
+ExecStart=node /home/pi/lbsockets/lbsockets.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=lbsockets
+User=root
+Group=root
+Environment=NODE_ENV=production
+[Install]
+WantedBy=multi-user.target

@@ -3,7 +3,7 @@
   "description": "client side (raspberrypi) nodejs server running socketsio-client",
   "main": "server.js",
   "scripts": {
-    "start": "node client.js 8081"
+    "start": "node lbsockets.js 8081"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
 module.exports = {
-    startSockets: function () {
+    startSockets: function (cb) {
         var socketsUrl = 'http://www.learninghabits.co.za';
         var socket = require('socket.io-client')(socketsUrl);
         socket.on('SwitchOn', function (data) {
@@ -20,5 +20,8 @@ module.exports = {
         socket.on('disconnect', function () {
             console.log('client disconnected with ID : ' + socket.id);
         });
+	socket.on('connect', function(){
+		if (cb) cb();
+	});
     }
 };
