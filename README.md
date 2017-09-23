@@ -21,7 +21,7 @@
 
 * https://www.npmjs.com/package/onoff
 
-### 4. Getting Server started on boot
+### 5. Getting Server started on boot
 
 * https://www.raspberrypi.org/forums/viewtopic.php?p=921354
 
