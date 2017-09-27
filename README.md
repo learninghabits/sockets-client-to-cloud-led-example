@@ -25,3 +25,7 @@
 
 * https://www.raspberrypi.org/forums/viewtopic.php?p=921354
 
+### 6. Sockets dropping connection (prevention:heartbeat)
+
+* https://stackoverflow.com/questions/9708604/nodejs-socket-io-connections-dropping-reconnecting
+
