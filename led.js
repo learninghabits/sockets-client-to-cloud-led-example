@@ -1,24 +1,30 @@
-function LED() {
+module.exports =  function () {
   var onoff = require('onoff');
   var Gpio = onoff.Gpio,
     led = new Gpio(4, 'out'),
     blueled = new Gpio(17, 'out'),
     interval;
 
+  var unExportGpio = function () {
+    led.unexport();
+    blueled.unexport();
+  }
+
   return {
-    deviceOn: function () {     
-          blueled.write(1, function () {
-            console.log("Device is now connected to the cloud");
-          })
+    deviceOn: function () {
+      blueled.write(1, function () {
+        console.log("Device is now connected to the cloud");
+      })
     },
     blink: function (data) {
+      led.write(0);
       var milliseconds = (data.seconds || 2) * 1000;
       console.log("data.seconds: " + data.seconds);
-      interval = setInterval(function () {       
-          var value = (led.readSync() + 1) % 2;
-          led.write(value, function () {
-            console.log("Changed LED state to: " + value);
-          });       
+      interval = setInterval(function () {
+        var value = (led.readSync() + 1) % 2;
+        led.write(value, function () {
+          console.log("Changed LED state to: " + value);
+        });
       }, milliseconds)
     },
     switchOn: function () {
@@ -39,13 +45,8 @@ function LED() {
         console.log("Changed LED state to OFF");
       })
     },
-    exit : function(){
-      led.writeSync(0);
-      led.unexport();
-      blueled.writeSync(0);
-      blueled.unexport();
+    exit: function () {
+      unExportGpio();
     }
   }
 }
-
-module.exports = new LED();

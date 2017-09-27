@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var sr = require('./socketsreceiver');
-var led = require('./led');
+var led = require('./led')();
 
 sr.startSockets(function() {
     led.deviceOn();
